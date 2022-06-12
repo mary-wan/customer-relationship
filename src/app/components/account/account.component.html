@@ -7,36 +7,15 @@
       <form>
         <div class="mb-3">
           <label for="accountType">Account Type</label>
-          <select class="form-control custom-select" name="accountType">
+          <select class="form-control custom-select" name="accountType" [(ngModel)]="account.accountType">
             <option value="Current">Current</option>
             <option value="Savings">Savings</option>
             <option value="Fixed">Fixed</option>
           </select>
         </div>
 
-
-        <!-- <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-                Current
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-                Savings
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-                Fixed
-            </label>
-          </div> -->
-
         <div class="mt-3">
-          <button class="btn btn-submit btn-color" routerLink="">Submit</button>
+          <button class="btn btn-submit btn-color" routerLink="/home" (click)="createAccount()">Submit</button>
         </div>
 
       </form>

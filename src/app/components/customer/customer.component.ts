@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Account } from 'src/app/models/account';
 import {Customer} from 'src/app/models/customer';
 import { AccountCreateService } from 'src/app/services/account-create.service';
 import {CustomerServiceService} from 'src/app/services/customer-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer',
@@ -19,8 +20,11 @@ export class CustomerComponent implements OnInit {
   customer: Customer = new Customer();
   customerId!: String;
 
+  @Output() getId = new EventEmitter<any>();
+
   constructor(
-    private customerService: CustomerServiceService, private accountService: AccountCreateService
+    private customerService: CustomerServiceService, private accountService: AccountCreateService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -84,26 +88,13 @@ export class CustomerComponent implements OnInit {
 
   }
 
-  onClick(event: { target: any; srcElement: any; currentTarget: any; }) {
-    var target = event.target || event.srcElement || event.currentTarget;
-    var idAttr = target.attributes.id;
-    var value = idAttr.nodeValue;
-    console.log("****************************", value);
-
-    this.customerService.createAccount(this.account, value).subscribe(
-      (res: any) => {
-        console.log(res);
-      },
-      (error: any) => {
-
-      },
-      () => {
-        this.getCustomers();
-      }
-    )
-
-
+  createCustomerAccount(customerIdNumber: any){
+    console.log("*********************", customerIdNumber);
     
-    
+    this.router.navigate(['account', customerIdNumber]);
+
   }
+    
+    
+  
 }

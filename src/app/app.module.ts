@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerComponent } from './components/customer/customer.component';
 import { AccountComponent } from './components/account/account.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
 
 
 
@@ -21,6 +23,8 @@ import { AccountComponent } from './components/account/account.component';
     HomeComponent,
     CustomerComponent,
     AccountComponent,
+    WelcomeComponent,
+    UpdateCustomerComponent,
  
   ],
   imports: [

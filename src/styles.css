@@ -1,8 +1,23 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+@font-face {
+    font-family: "DINPro-Bold";
+    src: local("DINPro-Bold"), url(src\assets\fonts\DINPro-Bold_13934.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "DINPro-Regular";
+    src: local("DINPro-Regular"), url(src\assets\fonts\DINPro-Regular.otf) format("truetype");
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .btn-color{
     background-color: #003d4c;
     color: white;
 }
+.btn-color:hover{
+    background-color:  #84bd00;
+    
+}
+

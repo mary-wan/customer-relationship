@@ -33,4 +33,9 @@ export class CustomerServiceService {
     return this.httpClient.post<any>
       (this.baseUrl + 'account/'+customerIdNumber, accountObj);
   }
+
+  updateCustomer(CustObj: any,customerIdNumber: any): Observable<any> {
+    return this.httpClient.put<any>
+      (this.baseUrl + 'customer/update/'+customerIdNumber, CustObj);
+  }
 }
