@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <h1>All Customers</h1>
+    <div class="col-md-6">
+      <div *ngFor="let customer of customers">
+        <div class="card mb-2">
+          <p>{{customer.firstName}} {{customer.lastName}}</p>
+          <p>National Id: {{customer.customerIdNumber}}</p>
+          <p>Id: {{customer.id}}</p>
+          <a href="" class="btn btn-sm btn-color" width ="100">VIEW DETAILS</a>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="customerId" [(ngModel)]="customerId" #name='ngModel'>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="getCustomerById()">Search</button>
+      </form>
+      <div class="card">
+        <p>{{customer.firstName}} {{customer.lastName}}</p>
+        
+      </div>
+    </div>
+    <div class="col-md-2">
+        <button type="submit" routerLink="/customer" class="btn btn-primary btn-sm mb-3">ADD CUSTOMER</button>
+    </div>
+  </div>
+ 
+</div>

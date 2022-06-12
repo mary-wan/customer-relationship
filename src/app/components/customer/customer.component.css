@@ -1,0 +1,25 @@
+/* .box {
+  background: #dcf1a9;
+  box-shadow: 0 0 20px #84bd00;
+
+} */
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+.gradient-custom{
+    background-image: url("src\assets\images\money4.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover !important;
+    /* color: white; */
+    /* height: 100vh !important; */
+}

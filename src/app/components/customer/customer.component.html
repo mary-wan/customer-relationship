@@ -1,0 +1,166 @@
+<!-- <div class="container form-cont">
+  <div class="row pt-3">
+    <div class="col-md-2">
+        <button type="submit" routerLink="" class="btn btn-primary btn-sm mb-3">BACK</button>
+    </div>
+    <div class="col-md-8">
+      <form>
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input class="form-control" type="text" name="name" [(ngModel)]="customer.firstName">
+        </div>
+
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input class="form-control" name="age" [(ngModel)]="customer.lastName">
+
+        </div>
+
+        <div class="mb-3">
+          <label for="customerId" class="form-label">Id Number</label>
+          <input class="form-control" type="number" name="customerIdNumber" [(ngModel)]="customer.customerIdNumber">
+        </div>
+
+        <div class="mb-3">
+          <label for="dob" class="form-label">Date Of Birth</label>
+          <input type="date" class="form-control" id="dob" name="dob" [(ngModel)]="customer.dob">
+        </div>
+
+        <div class="mb-3">
+          <label for="gender">Gender</label>
+          <select class="form-control" name="gender" [(ngModel)]="customer.gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">phoneNumber</label>
+          <input class="form-control" type="number" name="age" [(ngModel)]="customer.phoneNumber">
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input class="form-control" type="text" name="phone_number" [(ngModel)]="customer.email">
+        </div>
+        
+        <div class="mt-3">
+          <p>"^^^^^^^^^^^^^^^^^"{{customer.customerIdNumber}}</p>
+          <button class="btn btn-submit btn-color" (click)="createCustomer()" id={{customer.customerIdNumber}} (click)="onClick($event)"
+            [disabled]="!customer.firstName || !customer.customerIdNumber" routerLink="/account">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+
+<section class="gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="box">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <form>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" class="form-control form-control" name="firstName" [(ngModel)]="customer.firstName"/>
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control" name="LastName" [(ngModel)]="customer.lastName"/>
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div class="form-outline datepicker w-100">
+                    <input type="date" class="form-control form-control" id="birthdayDate"  name="dob" [(ngModel)]="customer.dob"/>
+                    <label for="birthdayDate" class="form-label">Date of Birth</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4" name="gender">
+
+                  <h6 class="mb-2 pb-1">Gender: </h6>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                      value="female" [(ngModel)]="customer.gender" />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                      value="male"  [(ngModel)]="customer.gender"/>
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <select class="form-control custom-select" name="documentType" [(ngModel)]="customer.documentType" >
+                      <option value="NationalId" selected>National Id</option>
+                      <option value="Passport">Passport</option>
+                    </select>
+                    <label class="form-label" for="emailAddress">Document Type</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="tel" id="phoneNumber" class="form-control form-control" name="customerIdNumber" [(ngModel)]="customer.customerIdNumber"/>
+                    <label class="form-label" for="phoneNumber">ID/Passport Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="email" id="emailAddress" class="form-control form-control" name="email" [(ngModel)]="customer.email"/>
+                    <label class="form-label" for="emailAddress">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="tel" id="phone" class="form-control form-control"  name="phoneNumber" [(ngModel)]="customer.phoneNumber"/>
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <button class="btn btn-submit btn-color" (click)="createCustomer()" id={{customer.customerIdNumber}} (click)="onClick($event)"
+                [disabled]="!customer.firstName || !customer.customerIdNumber" routerLink="/account">Submit</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
