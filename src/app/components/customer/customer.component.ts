@@ -73,21 +73,6 @@ export class CustomerComponent implements OnInit {
 
   }
 
-  createAccount(): void {
-    this.customerService.createAccount(this.account, this.customerIdNumber).subscribe(
-      (res: any) => {
-        console.log(res);
-      },
-      (error: any) => {
-
-      },
-      () => {
-        this.getCustomers();
-      }
-    )
-
-  }
-
   createCustomerAccount(customerIdNumber: any){
     console.log("*********************", customerIdNumber);
     

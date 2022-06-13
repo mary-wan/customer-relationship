@@ -19,4 +19,9 @@ export class AccountCreateService {
     return this.httpClient.post<any>
       (this.baseUrl + 'account/'+customerIdNumber, accountObj);
   }
+
+  getCustomerAccounts(customerIdNumber: any): Observable<any> {
+    return this.httpClient.get<any>
+      (this.baseUrl + 'customer/accounts/'+ customerIdNumber);
+  }
 }
